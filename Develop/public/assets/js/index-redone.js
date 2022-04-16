@@ -8,6 +8,12 @@ let noteList;
 const express = require('express')
 const app = express()
 
+// parse incoming string or array data
+app.use(express.urlencoded({ extended: true }));
+// parse incoming JSON data
+app.use(express.json());
+
+// lets buttons and inputs be used if on correct page
 if (window.location.pathname === './notes.html') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -189,3 +195,7 @@ if (window.location.pathname === '/notes.html') {
 }
 
 getAndRenderNotes();
+
+app.listen(3333, () => {
+    console.log(`API port 4001 is go!`)
+});

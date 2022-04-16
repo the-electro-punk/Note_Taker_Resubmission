@@ -5,6 +5,10 @@
             "noteText": "clean Bill, Mary, and John's offices at 6:30am"
         },
         {
+            "noteTitle": "update computers",
+            "noteText": "run buidling-wide system update to all Sales computers 7:30am"
+        },
+        {
             "noteTitle": "corporate meeting",
             "noteText": "meeting with CEO and executives at 12:00pm"
         }
