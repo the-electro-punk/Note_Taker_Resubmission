@@ -3,13 +3,27 @@ const app = express()
 
 const { animals } = require('./public/data/animals')
 
+function filterByQuery(query, animalsArray) {
+    let filteredResults = animalsArray;
+    if (query.diet) {
+        filteredResults = filteredResults.filter(animal => animal.diet === query.diet)
+    }
+    if (query.species) {
+        filteredResults = filteredResults.filter(animal => animal.species === query.species);
+      }
+    if (query.name) {
+        filteredResults = filteredResults.filter(animal => animal.name === query.name);
+    }
+    return filteredResults;
+}
 
-
-app.get('/api/animals', (req,res) => {
+app.get('/api/animals', (req, res) => {
     let results = animals;
-    console.log(req.query);
-    res.json(results)
-})
+    if (req.query) {
+      results = filterByQuery(req.query, results);
+    }
+    res.json(results);
+  });
 
 app.listen(3005, () => {
     console.log(`API server now on port 3005!`)
