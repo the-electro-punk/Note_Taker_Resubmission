@@ -1,5 +1,6 @@
 let noteTitle;
 let noteText;
+// save button is hidden; need to code so it appears when text is inputted
 let saveNoteBtn;
 let newNoteBtn;
 let noteList;
@@ -179,6 +180,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
+// buttons are coded to perform function; may need to code to 
 if (window.location.pathname === '/notes.html') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);

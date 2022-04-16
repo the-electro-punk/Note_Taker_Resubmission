@@ -19,9 +19,9 @@ body {
 .note-textarea,
 .note-title {
   color: #000000;
-  width: 100%;
+  width: 75%;
   outline: none;
-  border: none;
+  border: solid black 2px;
 }
 
 .note-textarea {
